@@ -1,0 +1,48 @@
+@import "config.scss";
+
+.b-portf {
+	position: relative;
+	background: white;
+	&__wrap {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+.el-portf {
+	flex: 0 0 50%;
+	height: 50vh;
+	background: center/cover no-repeat;
+	position: relative;
+	padding-bottom: 156px;
+	display: flex;
+	align-items: flex-end;
+	&:hover:after {
+		background: rgba(0, 0, 0, 0.4);
+	}
+	&:after {
+		position: absolute;
+		content: "";
+		background: rgba(0, 0, 0, 0.5);
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transition-duration: 0.3s;
+	}
+	&__body {
+		max-width: 350px;
+		width: 100%;
+		margin: 0 auto;
+		font-size: 20px;
+		line-height: 110%;
+		color: white;
+		font-family: $font2;
+		position: relative;
+		z-index: 1;
+	}
+	&__title {
+	}
+	&__size {
+	}
+}

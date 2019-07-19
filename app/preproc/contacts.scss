@@ -1,0 +1,89 @@
+@import "config.scss";
+.b-splited--contacts {
+	.b-splited__block {
+		overflow: hidden;
+	}
+}
+
+.contacts {
+	font-family: $font2;
+	font-weight: 300;
+	font-size: 20px;
+	color: black;
+	line-height: 160%;
+	max-width: 276px;
+	letter-spacing: 0.3px;
+	&__address {
+		font-style: normal;
+		margin-bottom: 32px;
+	}
+	&__phone {
+		display: block;
+		color: black;
+		margin-bottom: 32px;
+	}
+	&__mail {
+		display: block;
+		color: black;
+		text-decoration: underline;
+	}
+}
+
+.slider-contacts {
+	margin-top: 57px;
+	max-width: 250px;
+	.item {
+		font-family: $font2;
+	}
+	.el {
+		font-size: 16px;
+		line-height: 160%;
+		&__image {
+			margin-bottom: 23px;
+			img {
+				margin: auto;
+				max-height: 128px;
+				max-width: 128px;
+			}
+		}
+		&__title {
+			font-weight: 700;
+		}
+		&__desc {
+			font-weight: 300;
+		}
+	}
+	.arrow {
+		position: absolute;
+		top: 45px;
+		&--prev {
+			left: 0;
+		}
+		&--next {
+			right: 0;
+		}
+	}
+}
+.contacts-call {
+	max-width: 140px;
+	width: 100%;
+	margin-top: 47px;
+}
+
+.contacts-imedia {
+	position: absolute;
+	left: calc(50vw - 50px);
+	transform: translateX(-100%);
+	bottom: 40px;
+	font-family: $font2;
+	display: flex;
+	align-items: center;
+	color: black;
+	font-size: 12px;
+	span {
+		margin-right: 10px;
+	}
+	&:hover {
+		text-decoration: underline;
+	}
+}

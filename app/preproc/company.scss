@@ -1,0 +1,33 @@
+@import "./config.scss";
+.company {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background: white;
+}
+.el-company {
+	font-family: $font2;
+	flex: 0 0 250px;
+	font-size: 16px;
+	line-height: 160%;
+	color: black;
+	&:nth-child(1),
+	&:nth-child(2) {
+		margin-bottom: 70px;
+	}
+	&__img {
+		margin-bottom: 28px;
+		img {
+			max-width: 90px;
+			max-height: 72px;
+		}
+	}
+	&__title {
+		font-weight: 700;
+		line-height: 1em;
+		margin-bottom: 25px;
+	}
+	&__desc {
+		max-width: 240px;
+	}
+}

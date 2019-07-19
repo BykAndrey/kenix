@@ -1,0 +1,39 @@
+@import "./config.scss";
+.firsb {
+	//min-height: 100vh;
+	position: relative;
+	background: white;
+	&:after {
+		content: "";
+		position: absolute;
+		background: url("../img/first.jpg") center/cover no-repeat;
+		height: 100vh;
+		width: 50vw;
+		right: 0;
+		top: 0;
+	}
+	&__title {
+		font-size: 48px;
+		color: black;
+		max-width: 450px;
+	}
+	&__desc {
+		font-size: 16px;
+		line-height: 160%;
+		color: black;
+		font-family: $font2;
+		max-width: 400px;
+		margin-top: 83px;
+		margin-bottom: 70px;
+	}
+	&__wrap {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+		min-height: 100vh;
+	}
+	&__block {
+		max-width: 50%;
+	}
+}

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.css" media="all" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="css/plugins.css" media="all" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="css/style.css" media="all" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="css/style-media.css" media="all" onload="if(media!='all')media='all'">
@@ -12,18 +13,382 @@
       <link rel="stylesheet" href="css/style-media.css">
       <link rel="stylesheet" href="css/fonts.css">
     </noscript>
-    <script src="js/jquery-3.2.1.min.js"></script>
   </head>
   <!--bread(['Каталог'])=> Главная Каталог-->
   <body>
     <div class="wrapper">
-      <main>
-        <div class="container">
-          <h1>Index page<span>A</span></h1>
+      <header class="header">
+        <div class="header__wrap container"><a class="header__logo" href="#"><img src="img/logo_pc.svg" alt="kenix"></a></div>
+      </header>
+      <main><a class="require-call" href="#">Заказать звонок</a>
+        <div class="side-menu">
+          <div class="side-menu__toggle"></div>
+          <div class="side-menu__bg"></div>
+          <nav class="side-menu__nav">
+            <div class="s-menu">
+              <ul class="s-menu__wrap">
+                <li class="s-menu__item"><a class="s-menu__link" href="#first">Почему выбирают “умный дом”</a></li>
+                <li class="s-menu__item"><a class="s-menu__link" href="#scenarios">Сценарии</a></li>
+                <li class="s-menu__item"><a class="s-menu__link" href="#controll">Управление системой</a></li>
+                <li class="s-menu__item"><a class="s-menu__link" href="#devices">Дизайне устройств</a></li>
+                <li class="s-menu__item"><a class="s-menu__link" href="#company">Наша компания</a></li>
+                <li class="s-menu__item"><a class="s-menu__link" href="#portfolio">Наши работы</a></li>
+                <li class="s-menu__item"><a class="s-menu__link" href="#express">Экспресс-заявка</a></li>
+                <li class="s-menu__item"><a class="s-menu__link" href="#contacts">Контакты</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="fullpage" id="fullpage">
+          <section class="firsb" id="first">
+            <div class="firsb__wrap container">
+              <div class="firsb__block">
+                <h2 class="firsb__title">Умный дом для вашего комфорта</h2>
+                <div class="firsb__desc">будущее уже наступило, умные дома стали доступны каждому, мы реализовали более 100 объектов, более 100 довольных клиентов живут в инновационных домах, теперь и у вас будет свой умный дом</div><a class="firsb__btn c-btn" href="#">Кнопка</a>
+              </div>
+            </div>
+          </section>
+          <section class="b-why" id="b-why">
+            <h2 class="b-why__title container b-title">Почему выбирают “умный дом”</h2>
+            <div class="b-why__wrap">
+              <div class="el-why" style="background-image: url('img/why/1.jpg')">
+                <div class="el-why__body">
+                  <div class="el-why__content">
+                    <div class="el-why__title">Функции и сценарии </div>
+                    <div class="el-why__desc">Комфортное освещение. Создаем сценарии для вашего утра и вечера.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="el-why" style="background-image: url('img/why/2.jpg')">
+                <div class="el-why__body">
+                  <div class="el-why__content">
+                    <div class="el-why__title">Eco Friendly решения</div>
+                    <div class="el-why__desc">Сэкономить электроэнергию и позаботиться о природе, сокращая электропотребление.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="el-why" style="background-image: url('img/why/3.jpg')">
+                <div class="el-why__body">
+                  <div class="el-why__content">
+                    <div class="el-why__title">Забота о здоровье</div>
+                    <div class="el-why__desc">Теплый пол и установка температуры в зависимости от погоды защитит вас и вашу семью от простуды и поможет расслабиться после работы.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="el-why" style="background-image: url('img/why/4.jpg')">
+                <div class="el-why__body">
+                  <div class="el-why__content">
+                    <div class="el-why__title">Качественное оборудование</div>
+                    <div class="el-why__desc">Официальный дилер. 10 лет на рынке. Только оригинальное оборудование.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="b-splited tabs-slider b-black" id="scenarios">
+            <h2 class="b-splited__title b-title">Сценарии</h2>
+            <div class="b-splited__wrap">
+              <div class="b-splited__block">
+                <div class="b-splited__content">
+                  <div class="b-tab b-tab--scenar">
+                    <div class="b-tab__nav">
+                      <div class="b-tab__nav-item"><a class="b-tab__link" href="#">пришел</a></div>
+                      <div class="b-tab__nav-item b-tab__nav-item--82"><a class="b-tab__link" href="#">Ушел</a></div>
+                      <div class="b-tab__nav-item b-tab__nav-item--82"><a class="b-tab__link" href="#">Отпуск</a></div>
+                      <div class="b-tab__nav-item b-tab__nav-item--82"><a class="b-tab__link" href="#">Гости</a></div>
+                      <div class="b-tab__nav-item"><a class="b-tab__link" href="#">Романтика</a></div>
+                      <div class="b-tab__nav-item"><a class="b-tab__link" href="#">Кино</a></div>
+                      <div class="b-tab__nav-item b-tab__nav-item--82"><a class="b-tab__link" href="#">Вечеринка</a></div>
+                    </div>
+                    <div class="b-tab__body">
+                      <div class="b-tab__content"> 
+                        <p>Возвращение домой взрослого. Происходит включение света, сплит-системы, запускается музыка, сопровождаемая оповещением о пропущенных звонках, визитах посетителей и состоянии систем дома.</p>
+                      </div>
+                      <div class="b-tab__content"> 
+                        <p>2 Возвращение домой взрослого. Происходит включение света, сплит-системы, запускается музыка, сопровождаемая оповещением о пропущенных звонках, визитах посетителей и состоянии систем дома.</p>
+                      </div>
+                      <div class="b-tab__content"> 
+                        <p>3 Возвращение домой взрослого. Происходит включение света, сплит-системы, запускается музыка, сопровождаемая оповещением о пропущенных звонках, визитах посетителей и состоянии систем дома.</p>
+                      </div>
+                      <div class="b-tab__content"> 
+                        <p>4 Возвращение домой взрослого. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates a fugit veniam eum ad, vel nostrum beatae quidem, quod cupiditate impedit quia non illum quasi, explicabo quis amet quaerat consequatur?</p>
+                      </div>
+                      <div class="b-tab__content"> 
+                        <p>5 Возвращение домой взрослого. Происходит включение света, сплит-системы, запускается музыка, сопровождаемая оповещением о пропущенных звонках, визитах посетителей и состоянии систем дома.</p>
+                      </div>
+                      <div class="b-tab__content"> 
+                        <p>6 Возвращение домой взрослого. Происходит включение света, сплит-системы, запускается музыка, сопровождаемая оповещением о пропущенных звонках, визитах посетителей и состоянии систем дома.Возвращение домой взрослого. Происходит включение света, сплит-системы, запускается музыка, сопровождаемая оповещением о пропущенных звонках, визитах посетителей и состоянии систем дома.</p>
+                      </div>
+                      <div class="b-tab__content"> 
+                        <p>7 Возвращение домой взрослого. Происходит включение света, сплит-системы, запускается музыка, сопровождаемая оповещением о пропущенных звонках, визитах посетителей и состоянии систем дома.Возвращение домой взрослого. Происходит включение света, сплит-системы, запускается музыка, сопровождаемая оповещением о пропущенных звонках, визитах посетителей и состоянии систем дома.Возвращение домой взрослого. Происходит включение света, сплит-системы, запускается музыка, сопровождаемая оповещением о пропущенных звонках, визитах посетителей и состоянии систем дома.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="b-splited__block">
+                <div class="b-splited__slider js-slider">
+                  <div class="item" style="background-image: url('img/scenar.jpg')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/1/750/900')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/15/750/900')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/222/750/900')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/23/750/900')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/54/750/900')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/533/750/900')"></div>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-button-wrap container"><a class="c-btn" href="#">оставить заявку</a></div>
+          </section>
+          <section class="b-splited tabs-slider b-black" id="controll">
+            <h2 class="b-splited__title b-title">Управление системой Умный дом</h2>
+            <div class="b-splited__wrap">
+              <div class="b-splited__block">
+                <div class="b-splited__content">
+                  <div class="b-tab">
+                    <div class="b-tab__nav b-tab__nav--smart">
+                      <div class="b-tab__nav-item"><a class="b-tab__link" href="#">Сценарный выключатель</a></div>
+                      <div class="b-tab__nav-item"><a class="b-tab__link" href="#">Компьютер</a></div>
+                      <div class="b-tab__nav-item"><a class="b-tab__link" href="#">смартфон</a></div>
+                      <div class="b-tab__nav-item"><a class="b-tab__link" href="#">планшет</a></div>
+                      <div class="b-tab__nav-item"><a class="b-tab__link" href="#">настенная панель</a></div>
+                      <div class="b-tab__nav-item"><a class="b-tab__link" href="#">Голосовой помощник</a></div>
+                    </div>
+                    <div class="b-tab__body">
+                      <div class="b-tab__content"> <img src="img/smart-scheme.svg"></div>
+                      <div class="b-tab__content"> <img src="https://picsum.photos/id/22/152/200"></div>
+                      <div class="b-tab__content"> <img src="https://picsum.photos/id/1/152/200"></div>
+                      <div class="b-tab__content"> <img src="https://picsum.photos/id/15/152/200"></div>
+                      <div class="b-tab__content"> <img src="https://picsum.photos/id/222/152/200"></div>
+                      <div class="b-tab__content"> <img src="https://picsum.photos/id/23/152/200"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="b-splited__block">
+                <div class="b-splited__slider js-slider">
+                  <div class="item" style="background-image: url('img/smart.jpg')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/22/750/900')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/1/750/900')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/15/750/900')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/222/750/900')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/23/750/900')"></div>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-button-wrap container"><a class="c-btn" href="#">оставить заявку</a></div>
+          </section>
+          <section class="b-devices" id="devices">
+            <h2 class="b-devices__title b-title">Разнообразие дизайна устройств</h2>
+            <div class="b-devices__wrap">
+              <div class="b-devices__block">
+                <div class="b-devices__slider">
+                  <div class="item" style="background-image:url('img/devices/1.jpg')"><img class="item__name" src="img/devices/name-1.png" alt="Name device"></div>
+                  <div class="item" style="background-image:url('img/devices/2.jpg')"><img class="item__name" src="img/devices/name-2.png" alt="Name device"></div>
+                </div>
+                <div class="b-devices__slider-arrows"></div>
+              </div>
+              <div class="b-devices__block">
+                <div class="b-devices__slider">
+                  <div class="item" style="background-image:url('img/devices/2.jpg')"><img class="item__name" src="img/devices/name-2.png" alt="Name device"></div>
+                  <div class="item" style="background-image:url('img/devices/1.jpg')"><img class="item__name" src="img/devices/name-1.png" alt="Name device"></div>
+                </div>
+                <div class="b-devices__slider-arrows"></div>
+              </div>
+            </div>
+            <div class="bottom-button-wrap container"><a class="c-btn" href="#">оставить заявку</a></div>
+          </section>
+          <section class="b-splited b-black" id="company">
+            <h2 class="b-splited__title b-title">Почему стоит выбрать нашу компанию</h2>
+            <div class="b-splited__wrap">
+              <div class="b-splited__block">
+                <div class="b-splited__content">
+                  <div class="company">
+                    <div class="el-company">
+                      <div class="el-company__img"><img src="img/company/1.svg" alt="Работаем «под ключ»" width="90"></div>
+                      <div class="el-company__title">Работаем «под ключ»</div>
+                      <div class="el-company__desc">Сдаем объект сразу готовый к проживанию.</div>
+                    </div>
+                    <div class="el-company">
+                      <div class="el-company__img"><img src="img/company/2.svg" alt="Фиксируем стоимость" width="90"></div>
+                      <div class="el-company__title">Фиксируем стоимость</div>
+                      <div class="el-company__desc">Стоимость закрепляем в договоре и не изменяем на протяжении проекта.</div>
+                    </div>
+                    <div class="el-company">
+                      <div class="el-company__img"><img src="img/company/3.svg" alt="Работаем «под ключ»" width="90"></div>
+                      <div class="el-company__title">Гарантия на работу 10 лет</div>
+                      <div class="el-company__desc">Работаем качественно, поэтому не боимся давать такие гарантии.</div>
+                    </div>
+                    <div class="el-company">
+                      <div class="el-company__img"><img src="img/company/4.svg" alt="Лучшая цена" width="90"></div>
+                      <div class="el-company__title">Лучшая цена</div>
+                      <div class="el-company__desc">Снизим стоимость вашего проекта на 20% не экономя на качестве</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="b-splited__block">
+                <div class="b-splited__slider js-slider">
+                  <div class="item" style="background-image: url('img/company.jpg')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/1/750/900')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/15/750/900')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/222/750/900')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/23/750/900')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/54/750/900')"></div>
+                  <div class="item" style="background-image: url('https://picsum.photos/id/533/750/900')"></div>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-button-wrap container"><a class="c-btn" href="#">оставить заявку</a></div>
+          </section>
+          <section class="b-portf" id="portfolio">
+            <h2 class="b-portf__title b-title">Наши работы</h2>
+            <div class="b-portf__wrap"><a class="el-portf" href="#" style="background-image: url('img/portfolio/1.jpg')">
+                <div class="el-portf__body">
+                  <div class="el-portf__title">Дом в Барановичах </div>
+                  <div class="el-portf__size">280 кв. м</div>
+                </div></a><a class="el-portf" href="#" style="background-image: url('img/portfolio/2.jpg')">
+                <div class="el-portf__body">
+                  <div class="el-portf__title">Коттедж в Логойске </div>
+                  <div class="el-portf__size">220 кв. м</div>
+                </div></a><a class="el-portf" href="#" style="background-image: url('img/portfolio/3.jpg')">
+                <div class="el-portf__body">
+                  <div class="el-portf__title">Квартира в Минске</div>
+                  <div class="el-portf__size">76 кв. м</div>
+                </div></a><a class="el-portf" href="#" style="background-image: url('img/portfolio/4.jpg')">
+                <div class="el-portf__body">
+                  <div class="el-portf__title">Дом в Минске</div>
+                  <div class="el-portf__size">150 кв. м</div>
+                </div></a></div>
+          </section>
+          <section class="section express-req b-black" id="experess">
+            <h2 class="express-req__title b-title">Экспресс-заявка</h2>
+            <div class="express-req__wrap container">
+              <div class="express-req__left">
+                <div class="b-tab b-tab--express-req">
+                  <div class="b-tab__nav">
+                    <div class="b-tab__nav-item"><a class="b-tab__link" href="#">квартира</a></div>
+                    <div class="b-tab__nav-item"><a class="b-tab__link" href="#">Дом</a></div>
+                    <div class="b-tab__nav-item"><a class="b-tab__link" href="#">Коттеджи</a></div>
+                    <div class="b-tab__nav-item"><a class="b-tab__link" href="#">ресторан</a></div>
+                    <div class="b-tab__nav-item"><a class="b-tab__link" href="#">гостиница</a></div>
+                  </div>
+                  <div class="b-tab__body">
+                    <div class="b-tab__content">
+                      <div class="el-express">
+                        <div class="el-express__image"><img src="img/express-req.svg" width="128" alt="express-request"></div>
+                        <div class="el-express__content">
+                          <ul class="el-express__list">
+                            <li> <strong>Освещение </strong></li>
+                            <li>Климат</li>
+                            <li> <b>Электроснабжение</b></li>
+                            <li>Защита от аварий</li>
+                            <li>Электроприводы и механизмы</li>
+                            <li>Система мультирум</li>
+                            <li>Устройства управления</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="b-tab__content">
+                      <div class="el-express">
+                        <div class="el-express__image"><img src="img/express-req.svg" width="128" alt="express-request"></div>
+                        <div class="el-express__content">
+                          <ul class="el-express__list">
+                            <li> <strong>Освещение </strong></li>
+                            <li>Климат</li>
+                            <li> <b>Электроснабжение</b></li>
+                            <li>Защита от аварий</li>
+                            <li>Электроприводы и механизмы</li>
+                            <li> <strong>Система мультирум</strong></li>
+                            <li>Устройства управления</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="b-tab__content">
+                      <div class="el-express">
+                        <div class="el-express__image"><img src="img/express-req.svg" width="128" alt="express-request"></div>
+                        <div class="el-express__content">
+                          <ul class="el-express__list">
+                            <li>Освещение </li>
+                            <li> <strong>Климат</strong></li>
+                            <li>Электроснабжение</li>
+                            <li> <strong>Защита от аварий</strong></li>
+                            <li>Электроприводы и механизмы</li>
+                            <li> <strong>Система мультирум</strong></li>
+                            <li>Устройства управления</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="express-req__right">
+                <form class="req-form">
+                  <input class="c-input req-form__field" type="text" placeholder="Ваше имя">
+                  <input class="c-input req-form__field" type="text" placeholder="Телефон">
+                  <input class="c-input req-form__field req-form__field--email" type="text" placeholder="E-mail">
+                  <button class="c-btn req-form__send" type="submit">Отправить заявку</button>
+                </form>
+              </div>
+            </div>
+          </section>
+          <section class="b-splited b-splited--contacts b-black" id="contacts">
+            <h2 class="b-splited__title b-title">Контакты</h2>
+            <div class="b-splited__wrap">
+              <div class="b-splited__block">
+                <div class="b-splited__content">
+                  <div class="contacts">
+                    <address class="contacts__address">Республика Беларусь г. Минск ул. Сурганова 88, оф. 6H</address><a class="contacts__phone" href="tel:+375291067676" target="_blank">+375 (29) 106 76 76</a><a class="contacts__mail" href="mailto:info@knx.by" target="_blank">info@knx.by</a>
+                  </div>
+                  <div class="slider-contacts">
+                    <div class="item">
+                      <div class="el">
+                        <div class="el__image"><img src="img/express-req.svg" alt="cottage"></div>
+                        <div class="el__title">У меня коттедж</div>
+                        <div class="el__desc">Хочу сделать его “умнее”</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="el">
+                        <div class="el__image"><img src="img/express-req.svg" alt="cottage"></div>
+                        <div class="el__title">У меня коттедж</div>
+                        <div class="el__desc">Хочу сделать его “умнее”</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="el">
+                        <div class="el__image"><img src="img/express-req.svg" alt="cottage"></div>
+                        <div class="el__title">У меня коттедж</div>
+                        <div class="el__desc">Хочу сделать его “умнее”</div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="el">
+                        <div class="el__image"><img src="img/express-req.svg" alt="cottage"></div>
+                        <div class="el__title">У меня коттедж</div>
+                        <div class="el__desc">Хочу сделать его “умнее”</div>
+                      </div>
+                    </div>
+                  </div><a class="c-btn contacts-call" href="#">оставить заявку</a><a class="contacts-imedia" href="https://www.imedia.by/" target="_blank"><span>Разработка</span>
+                    <picture>
+                      <source srcset="img/imedia@2x.png 2x" type="image/png"><img src="img/imedia.png" alt="imedia" width="94">
+                    </picture></a>
+                </div>
+              </div>
+              <div class="b-splited__block">
+                <div id="map"></div>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
     </div>
+    <footer class="footer"><a class="footer__guest" href="#">Зайти в гости</a><a class="footer__phone" href="#">+375 (29) 106 76 76</a></footer>
     <script src="js/plugins.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.min.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>

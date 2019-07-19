@@ -1,145 +1,133 @@
-@import 'config.scss';
-.c-btn{
+@import "config.scss";
+.c-btn {
+	font-family: $font1;
 	display: inline-block;
-	background: $color;
-	border:1px solid $color;
-	color:white;
-	border-radius: 3px;
-	font-weight: 400;
-	font-size:1.4em;
-	padding:em(16px,14px) 1em em(16px,14px);
-	flex:0 1 em(200px,14px);
-
-	text-align: center;
-	transition-duration: 0.3s;
+	background: white;
+	min-width: 120px;
+	padding: 15px 15px 11px;
+	font-size: 14px;
+	border: 1px solid black;
 	text-transform: uppercase;
-	cursor: pointer;
-	position: relative;
-	overflow: hidden;
-	/*&:after{
-		content: '';
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		top:0;
-		left:0;
-		background: rgba(255,255,255,0.2);
-		transform: rotate(25deg) translate(50%,-250%);
-		transition-duration: 0.3s;
-	}*/
-	&:hover{
-		background: rgba(255,255,255,0.2);
-		color:$color;
-		&:after{
+	color: black;
+	border-radius: 43px;
+	text-align: center;
+	line-height: 1em;
+	transition-duration: 0.3s;
+	&:hover {
+		background: black;
+		color: white;
+		&:after {
 			transform: none;
 		}
 	}
-	&--invert{
+	&--invert {
 		background: transparent;
-		&:hover{
-			color:white;
+		&:hover {
+			color: white;
 			background: $color;
 		}
 	}
-	&--attantion{
+	&--attantion {
 		background: $attantion;
 		border-color: $attantion;
-		&:hover{
-			color:$attantion;
+		&:hover {
+			color: $attantion;
 		}
 	}
-	&--warning{
+	&--warning {
 		background: $warning;
 		border-color: $warning;
-		&:hover{
-			color:$warning;;
+		&:hover {
+			color: $warning;
 		}
 	}
 }
 
-.c-input{
-	font-size:1.4em;
-	color:#808080;
-	text-indent: 2.5rem;
-
+.c-input {
+	font-size: 14px;
+	color: black;
 	min-width: 0;
-	
 	transition-duration: 0.3s;
-	height: em(50px,14px);
-	border:1px solid $color;
-	border-radius: 3px;
-	&:focus{
-		border-color:$warning;
+	height: em(30px, 14px);
+	border: none;
+	border-bottom: 1px solid black;
+	border-radius: 0;
+	&:focus {
+		outline: none;
 	}
 }
-.text-content{
-	color:#333333;;
+.text-content {
+	color: #333333;
 	font-size: 1.4em;
-	line-height: em(20px,14px);
-	*::selection{
-		color:$color;
-		background: rgba($color,.2);
+	line-height: em(20px, 14px);
+	*::selection {
+		color: $color;
+		background: rgba($color, 0.2);
 		text-decoration: underline;
 	}
-	a{
-		color:$color;
+	a {
+		color: $color;
 		transition-duration: 0.3s;
-		&::selection{
-			color:$warning;
-			background: rgba($warning,.2);
+		&::selection {
+			color: $warning;
+			background: rgba($warning, 0.2);
 		}
-		&:hover{
-			color:$warning;
+		&:hover {
+			color: $warning;
 		}
 	}
-	p:not(:last-child){
-		margin-bottom: em(14px,14px);
-
+	p:not(:last-child) {
+		margin-bottom: em(14px, 14px);
 	}
 	/*ol ul*/
-	ul,ol{
-		padding-left: em(20px,14px);
-		&:not(:first-child){
+	ul,
+	ol {
+		padding-left: em(20px, 14px);
+		&:not(:first-child) {
 			margin-top: 1em;
 		}
-		&:not(:last-child){
+		&:not(:last-child) {
 			margin-bottom: 1em;
 		}
 	}
-	ul{
-		li{
+	ul {
+		li {
 			list-style: none;
 			position: relative;
-			&:before{
-				content: '';
-				
-				position: absolute;
-				top:em(10px,14px);
-				left:em(-20px,14px);
+			&:before {
+				content: "";
 
+				position: absolute;
+				top: em(10px, 14px);
+				left: em(-20px, 14px);
 
 				height: 1px;
-				width: em(12px,14px);
+				width: em(12px, 14px);
 				background: #69392e;
 			}
 		}
 	}
-		/*/ol ul*/
-	h1, h2,h3,h4,h5,h6{
-		&:not(:first-child){
+	/*/ol ul*/
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		&:not(:first-child) {
 			margin-top: 1.5em;
 		}
-		&:not(:last-child){
-			margin-bottom: .5em;
+		&:not(:last-child) {
+			margin-bottom: 0.5em;
 		}
 	}
-	blockquote{
-		border:1px solid rgba(0,0,0,0.1);
+	blockquote {
+		border: 1px solid rgba(0, 0, 0, 0.1);
 		padding: 1em 1.5rem;
-		&:not(:first-child){
+		&:not(:first-child) {
 			margin-top: 1em;
 		}
-		&:not(:last-child){
+		&:not(:last-child) {
 			margin-bottom: 1em;
 		}
 	}

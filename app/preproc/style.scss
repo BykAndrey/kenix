@@ -1,21 +1,20 @@
-@import 'config.scss';
-@import 'common.scss';
-*{
+@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,400,700&display=swap&subset=cyrillic");
+@import "config.scss";
+
+* {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	outline: none;
 }
-a{
+a {
 	text-decoration: none;
 }
 
-
-html{
+html {
 	height: 100%;
 }
-body{
-	max-width: 1920px;
+body {
 	margin: auto;
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -24,24 +23,265 @@ body{
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-    font-size: 1rem;
+	font-size: 1rem;
+	font-family: "Yanone Kaffeesatz", sans-serif;
 }
-.wrapper{
-	flex:1 0 auto;
+.wrapper {
+	flex: 1 0 auto;
 }
-.footer{
+.footer {
 	flex: 0 0 auto;
-}/*
-.container{
-	max-width: 1170px;
+}
+.container {
+	max-width: 1130px;
 	width: 100%;
 	padding: 0px 15px;
 	margin: 0 auto;
-}*/
+}
 
-h1{
+h1 {
 	font-size: rem(25);
-	span{
-		font-size: em(20px,25px)
+	span {
+		font-size: em(20px, 25px);
+	}
+}
+
+@import "common.scss";
+@import "block_1.scss";
+@import "menu.scss";
+@import "b-why.scss";
+@import "splited.scss";
+@import "devices.scss";
+@import "company.scss";
+@import "portfolio.scss";
+@import "express-req.scss";
+@import "contacts.scss";
+//@import "onepage-scroll.css";
+section {
+	height: 100vh;
+	> * {
+		height: 100vh;
+	}
+}
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	&__logo {
+		display: inline-block;
+		position: relative;
+		z-index: 4;
+		img {
+			display: block;
+			max-width: 100%;
+		}
+	}
+}
+
+.footer {
+	&__guest {
+		position: fixed;
+		color: black;
+		font-family: $font2;
+		font-size: 16px;
+		padding-bottom: 0px;
+		left: 44px;
+		bottom: 50px;
+		&:after {
+			content: "";
+			height: 2px;
+			position: absolute;
+			width: 100%;
+			background: black;
+			left: 0;
+			bottom: 0;
+			transition-duration: 0.3s;
+		}
+		&:hover {
+			&:after {
+				opacity: 0;
+			}
+		}
+	}
+	&__phone {
+		position: fixed;
+		font-size: 16px;
+		font-family: $font2;
+		color: black;
+		right: 44px;
+		bottom: 50px;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.require-call {
+	position: fixed;
+	//height: 50px;
+	width: 150px;
+	border: 1px solid black;
+	right: 50px;
+	top: 50px;
+	z-index: 10;
+	font-size: 16px;
+	font-family: $font2;
+	color: black;
+	text-align: center;
+	padding: 13px 0 12px;
+	transition-duration: 0.3s;
+	&:hover {
+		background: black;
+		color: white;
+	}
+}
+
+.b-title {
+	width: 100%;
+	top: 46px;
+	position: absolute;
+	color: white;
+	font-size: 48px;
+	letter-spacing: em(3px, 48px);
+	line-height: 110%;
+	max-width: 401px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	transform: translateX(-50px);
+	z-index: 2;
+	.b-black & {
+		color: black;
+	}
+}
+
+.b-tab {
+	&__nav {
+		display: flex;
+
+		justify-content: flex-start;
+		max-width: 410px;
+		flex-wrap: wrap;
+	}
+	&__nav-item {
+		margin-bottom: 25px;
+		margin-right: 30px;
+		&--82 {
+			flex: 0 0 82px;
+			text-align: center;
+		}
+	}
+	&__link {
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 110%;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		position: relative;
+		color: #5b5b5b;
+		&:after {
+			content: "";
+			position: absolute;
+			height: 1px;
+			width: 0%;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			background: black;
+			transition-duration: 0.3s;
+			max-width: 100%;
+		}
+		&:hover,
+		&.is-active {
+			color: black;
+			&:after {
+				width: 100%;
+			}
+		}
+	}
+	&__body {
+		max-width: 350px;
+		margin-top: 90px;
+	}
+	&__content {
+		font-size: 16px;
+		line-height: 160%;
+		font-weight: 300;
+		font-family: $font2;
+		display: none;
+		&.is-active {
+			display: block;
+		}
+	}
+}
+
+.b-tab--scenar {
+	.b-tab__nav:nth-child(2) {
+		justify-content: flex-start;
+	}
+}
+
+.b-tab__nav--smart {
+	justify-content: space-between;
+}
+.bottom-button-wrap {
+	position: absolute;
+	bottom: 50px;
+	text-align: center;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	.c-btn {
+		min-width: 140px;
+	}
+}
+
+.req-form {
+	&__field {
+		display: block;
+		width: 100%;
+		margin-bottom: 20px;
+		&--email {
+			margin-top: 22px;
+			margin-bottom: 56px;
+		}
+	}
+	&__send {
+		max-width: 140px;
+		width: 100%;
+	}
+}
+
+#map {
+	height: 100%;
+	max-height: 100%;
+	max-width: 100%;
+	width: 100%;
+}
+
+#pp-nav {
+	&.right {
+		text-align: right;
+	}
+	li {
+		span {
+			transition-duration: 0.3s;
+			display: inline-block;
+			height: 1px;
+			background: white;
+			width: 14px;
+			border: none;
+			border-radius: 0;
+		}
+		.active {
+			span {
+				width: 26px;
+				background: white;
+				opacity: 1;
+			}
+		}
 	}
 }

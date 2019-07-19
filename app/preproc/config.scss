@@ -1,54 +1,53 @@
 $browser-context: 16; // Default
 @function em($pixels, $context: $browser-context) {
-  @return #{$pixels/$context}em;
+	@return #{$pixels/$context}em;
 }
 @function rem($pixels, $context: $browser-context) {
-  @return #{$pixels/$context}rem;
+	@return #{$pixels/$context}rem;
 }
 
-$base-pad:3rem;
-@function col($count,$margin:$base-pad){
-  $size:100%/$count;
-  @return calc(#{$size} - #{$margin});
+$base-pad: 3rem;
+@function col($count, $margin: $base-pad) {
+	$size: 100% / $count;
+	@return calc(#{$size} - #{$margin});
 }
-@mixin listel($colmar){
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  margin-left: -#{$colmar};
+@mixin listel($colmar) {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin-left: -#{$colmar};
 }
-@mixin col($count,$colmar){
-  width:col($count,$colmar);
-  margin-left: $colmar;
+@mixin col($count, $colmar) {
+	width: col($count, $colmar);
+	margin-left: $colmar;
 }
 
+$font1: "Yanone Kaffeesatz", sans-serif;
+$font2: "Circe";
 
+$color: #0057ff;
+$attantion: #ffcd00;
+$warning: #ff181f;
 
-
-
-$color:#0057ff;
-$attantion:#ffcd00;;
-$warning:#ff181f;
-
-$xl:1200px;
-$lg:992px;
-$md:768px;
-$sm:576px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
 
 @mixin below($width) {
-  @media screen and (max-width: $width - 1) {
-    @content;
-  }
+	@media screen and (max-width: $width - 1) {
+		@content;
+	}
 }
 
 @mixin above($width) {
-  @media screen and (min-width: $width) {
-    @content;
-  }
+	@media screen and (min-width: $width) {
+		@content;
+	}
 }
 
 @mixin between($minWidth, $maxWidth) {
-  @media screen and (min-width: $minWidth) and (max-width: $maxWidth) {
-    @content;
-  }
+	@media screen and (min-width: $minWidth) and (max-width: $maxWidth) {
+		@content;
+	}
 }

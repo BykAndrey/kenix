@@ -1,5 +1,15 @@
 extend main.pug
 block middle
-	.container
-		h1 Index page
-			span A
+	a.require-call(href="#") Заказать звонок
+	include parts/menu
+	.fullpage#fullpage
+		include parts/block_1
+		include parts/b-why
+		
+		include parts/scenarios
+		include parts/smart-house
+		include parts/devices
+		include parts/company
+		include parts/portfolio
+		include parts/express-req
+		include parts/contacts

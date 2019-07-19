@@ -1,0 +1,43 @@
+@import "./config.scss";
+.b-devices {
+	position: relative;
+	background: white;
+	&__wrap {
+		display: flex;
+	}
+	&__block {
+		flex: 0 0 50%;
+		max-width: 50vw;
+		min-width: 0;
+		position: relative;
+	}
+	&__slider {
+		max-width: 100%;
+		max-height: 100%;
+		&-arrows {
+			position: absolute;
+			bottom: 132px;
+			width: 100px;
+			margin: auto;
+			left: 0;
+			right: 0;
+			display: flex;
+			justify-content: space-between;
+		}
+		.item {
+			position: relative;
+			height: 100vh;
+			background: center/cover no-repeat;
+			&__name {
+				position: absolute;
+				top: 50%;
+				left: 100px;
+				transform: translateY(-50%);
+				max-height: 30px;
+			}
+		}
+	}
+}
+.arrow {
+	cursor: pointer;
+}
