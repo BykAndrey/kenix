@@ -1,5 +1,5 @@
 $(document).ready(() => {
-	$("#fullpage").pagepiling({
+	/*$("#fullpage").pagepiling({
 		sectionSelector: "section",
 		anchors: [
 			"first",
@@ -13,7 +13,42 @@ $(document).ready(() => {
 			"contacts"
 		]
 	});
-
+	*/
+	$("#fullpage").css({
+		oveflow: "hidden"
+	});
+	let sections = $("section");
+	sections.css({
+		position: "absolute",
+		top: window.innerHeight,
+		left: 0,
+		width: "100%"
+	});
+	let active = 0;
+	window.addEventListener("wheel", event => {
+		if (event.deltaY === 100) {
+			let prevent = active;
+			active += 1;
+			sections.eq(prevent).animate(
+				{
+					top: -window.innerHeight
+				},
+				1000
+			);
+			sections.eq(active).animate(
+				{
+					top: 0
+				},
+				1000,
+				function() {
+					let prev = prevent;
+					sections.eq(prev).css({
+						top: window.innerHeight
+					});
+				}
+			);
+		}
+	});
 	(function() {
 		let toggle = $(".side-menu__toggle");
 		let menu = $(".side-menu__nav");

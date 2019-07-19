@@ -48,9 +48,48 @@
 "use strict";
 
 $(document).ready(function () {
-  $("#fullpage").pagepiling({
-    sectionSelector: "section",
-    anchors: ["first", "scenarios", "controll", "b-why", "devices", "company", "portfolio", "experess", "contacts"]
+  /*$("#fullpage").pagepiling({
+  	sectionSelector: "section",
+  	anchors: [
+  		"first",
+  		"scenarios",
+  		"controll",
+  		"b-why",
+  		"devices",
+  		"company",
+  		"portfolio",
+  		"experess",
+  		"contacts"
+  	]
+  });
+  */
+  $("#fullpage").css({
+    oveflow: "hidden"
+  });
+  var sections = $("section");
+  sections.css({
+    position: "absolute",
+    top: window.innerHeight,
+    left: 0,
+    width: "100%"
+  });
+  var active = 0;
+  window.addEventListener("wheel", function (event) {
+    if (event.deltaY === 100) {
+      var prevent = active;
+      active += 1;
+      sections.eq(prevent).animate({
+        top: -window.innerHeight
+      }, 1000);
+      sections.eq(active).animate({
+        top: 0
+      }, 1000, function () {
+        var prev = prevent;
+        sections.eq(prev).css({
+          top: window.innerHeight
+        });
+      });
+    }
   });
 
   (function () {
