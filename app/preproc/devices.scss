@@ -2,18 +2,40 @@
 .b-devices {
 	position: relative;
 	background: white;
+	$c: &;
 	&__wrap {
 		display: flex;
+		@media screen and (max-width: 680px) {
+			display: block;
+		}
 	}
 	&__block {
 		flex: 0 0 50%;
 		max-width: 50vw;
 		min-width: 0;
 		position: relative;
+		@media screen and (max-width: 680px) {
+			max-width: 100%;
+			&:nth-child(2) {
+				background: red;
+				#{$c}__slider {
+					.item {
+						min-height: 600px;
+						&__name {
+							bottom: 160px;
+						}
+					}
+				}
+				#{$c}__slider-arrows {
+					bottom: 100px;
+				}
+			}
+		}
 	}
 	&__slider {
 		max-width: 100%;
 		max-height: 100%;
+
 		&-arrows {
 			position: absolute;
 			bottom: 132px;
@@ -23,10 +45,14 @@
 			right: 0;
 			display: flex;
 			justify-content: space-between;
+			@include below($s768) {
+				bottom: 50px;
+			}
 		}
 		.item {
 			position: relative;
 			height: 100vh;
+			min-height: 500px;
 			background: center/cover no-repeat;
 			&__name {
 				position: absolute;
@@ -34,6 +60,12 @@
 				left: 100px;
 				transform: translateY(-50%);
 				max-height: 30px;
+				@include below($s768) {
+					left: 50%;
+					top: auto;
+					transform: translate(-50%, 0);
+					bottom: 120px;
+				}
 			}
 		}
 	}

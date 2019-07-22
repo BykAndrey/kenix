@@ -13,14 +13,23 @@
 	line-height: 160%;
 	max-width: 276px;
 	letter-spacing: 0.3px;
+	@include below($s768) {
+		font-size: 16px;
+	}
 	&__address {
 		font-style: normal;
 		margin-bottom: 32px;
+		@include below($s768) {
+			margin-bottom: 15px;
+		}
 	}
 	&__phone {
 		display: block;
 		color: black;
 		margin-bottom: 32px;
+		@include below($s768) {
+			margin-bottom: 15px;
+		}
 	}
 	&__mail {
 		display: block;
@@ -32,6 +41,10 @@
 .slider-contacts {
 	margin-top: 57px;
 	max-width: 250px;
+	@include below($s1300) {
+		margin-top: 20px;
+	}
+
 	.item {
 		font-family: $font2;
 	}

@@ -17,6 +17,14 @@
 	padding-bottom: 156px;
 	display: flex;
 	align-items: flex-end;
+	@include below($s768) {
+		padding-bottom: 20px;
+		align-items: center;
+		min-height: 200px;
+	}
+	@include below($s500) {
+		flex: 0 0 100%;
+	}
 	&:hover:after {
 		background: rgba(0, 0, 0, 0.4);
 	}
@@ -40,6 +48,9 @@
 		font-family: $font2;
 		position: relative;
 		z-index: 1;
+		@include below($s768) {
+			padding: 15px;
+		}
 	}
 	&__title {
 	}

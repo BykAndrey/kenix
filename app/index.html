@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.css" media="all" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="css/plugins.css" media="all" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="css/style.css" media="all" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="css/style-media.css" media="all" onload="if(media!='all')media='all'">
@@ -20,15 +19,14 @@
       <header class="header">
         <div class="header__wrap container"><a class="header__logo" href="#"><img src="img/logo_pc.svg" alt="kenix"></a></div>
       </header>
-      <main>
-        <div class="mes"></div><a class="require-call" href="#">Заказать звонок</a>
+      <main><a class="require-call call-us" href="#">Заказать звонок</a>
         <div class="side-menu">
           <div class="side-menu__toggle"></div>
           <div class="side-menu__bg"></div>
           <nav class="side-menu__nav">
             <div class="s-menu">
               <ul class="s-menu__wrap">
-                <li class="s-menu__item"><a class="s-menu__link" href="#first">Почему выбирают “умный дом”</a></li>
+                <li class="s-menu__item"><a class="s-menu__link" href="#b-why">Почему выбирают “умный дом”</a></li>
                 <li class="s-menu__item"><a class="s-menu__link" href="#scenarios">Сценарии</a></li>
                 <li class="s-menu__item"><a class="s-menu__link" href="#controll">Управление системой</a></li>
                 <li class="s-menu__item"><a class="s-menu__link" href="#devices">Дизайне устройств</a></li>
@@ -40,6 +38,16 @@
             </div>
           </nav>
         </div>
+        <ul class="rnav">
+          <li class="rnav__item"><a class="rnav__link" href="#b-why"></a></li>
+          <li class="rnav__item"><a class="rnav__link" href="#scenarios"></a></li>
+          <li class="rnav__item"><a class="rnav__link" href="#controll"></a></li>
+          <li class="rnav__item"><a class="rnav__link" href="#devices"></a></li>
+          <li class="rnav__item"><a class="rnav__link" href="#company"></a></li>
+          <li class="rnav__item"><a class="rnav__link" href="#portfolio"></a></li>
+          <li class="rnav__item"><a class="rnav__link" href="#express"></a></li>
+          <li class="rnav__item"><a class="rnav__link" href="#contacts"></a></li>
+        </ul>
         <div class="fullpage" id="fullpage">
           <section class="firsb" id="first">
             <div class="firsb__wrap container">
@@ -47,9 +55,10 @@
                 <h2 class="firsb__title">Умный дом для вашего комфорта</h2>
                 <div class="firsb__desc">будущее уже наступило, умные дома стали доступны каждому, мы реализовали более 100 объектов, более 100 довольных клиентов живут в инновационных домах, теперь и у вас будет свой умный дом</div><a class="firsb__btn c-btn" href="#">Кнопка</a>
               </div>
+              <div class="firsb__scroll-down">Листай вниз</div>
             </div>
           </section>
-          <section class="b-why" id="b-why">
+          <section class="b-why" id="b-why" data-style="black">
             <h2 class="b-why__title container b-title">Почему выбирают “умный дом”</h2>
             <div class="b-why__wrap">
               <div class="el-why" style="background-image: url('img/why/1.jpg')">
@@ -86,11 +95,12 @@
               </div>
             </div>
           </section>
-          <section class="b-splited tabs-slider b-black" id="scenarios">
-            <h2 class="b-splited__title b-title">Сценарии</h2>
+          <section class="b-splited tabs-slider b-black" id="scenarios" data-style="white" data-style-call="black">
+            <h2 class="b-splited__title container b-title">Сценарии</h2>
             <div class="b-splited__wrap">
               <div class="b-splited__block">
                 <div class="b-splited__content">
+                  <div class="b-splited__title-copy b-title">Сценарии</div>
                   <div class="b-tab b-tab--scenar">
                     <div class="b-tab__nav">
                       <div class="b-tab__nav-item"><a class="b-tab__link" href="#">пришел</a></div>
@@ -141,11 +151,12 @@
             </div>
             <div class="bottom-button-wrap container"><a class="c-btn" href="#">оставить заявку</a></div>
           </section>
-          <section class="b-splited tabs-slider b-black" id="controll">
-            <h2 class="b-splited__title b-title">Управление системой Умный дом</h2>
+          <section class="b-splited tabs-slider b-black" id="controll" data-style="white">
+            <h2 class="b-splited__title container b-title">Управление системой Умный дом</h2>
             <div class="b-splited__wrap">
               <div class="b-splited__block">
                 <div class="b-splited__content">
+                  <div class="b-splited__title-copy b-title">Управление системой Умный дом</div>
                   <div class="b-tab">
                     <div class="b-tab__nav b-tab__nav--smart">
                       <div class="b-tab__nav-item"><a class="b-tab__link" href="#">Сценарный выключатель</a></div>
@@ -179,8 +190,8 @@
             </div>
             <div class="bottom-button-wrap container"><a class="c-btn" href="#">оставить заявку</a></div>
           </section>
-          <section class="b-devices" id="devices">
-            <h2 class="b-devices__title b-title">Разнообразие дизайна устройств</h2>
+          <section class="b-devices" id="devices" data-style="black">
+            <h2 class="b-devices__title container b-title">Разнообразие дизайна устройств</h2>
             <div class="b-devices__wrap">
               <div class="b-devices__block">
                 <div class="b-devices__slider">
@@ -200,10 +211,11 @@
             <div class="bottom-button-wrap container"><a class="c-btn" href="#">оставить заявку</a></div>
           </section>
           <section class="b-splited b-black" id="company">
-            <h2 class="b-splited__title b-title">Почему стоит выбрать нашу компанию</h2>
+            <h2 class="b-splited__title container b-title">Почему стоит выбрать нашу компанию</h2>
             <div class="b-splited__wrap">
               <div class="b-splited__block">
                 <div class="b-splited__content">
+                  <div class="b-splited__title-copy b-title">Почему стоит выбрать нашу компанию</div>
                   <div class="company">
                     <div class="el-company">
                       <div class="el-company__img"><img src="img/company/1.svg" alt="Работаем «под ключ»" width="90"></div>
@@ -242,8 +254,8 @@
             </div>
             <div class="bottom-button-wrap container"><a class="c-btn" href="#">оставить заявку</a></div>
           </section>
-          <section class="b-portf" id="portfolio">
-            <h2 class="b-portf__title b-title">Наши работы</h2>
+          <section class="b-portf" id="portfolio" data-style="black">
+            <h2 class="b-portf__title container b-title">Наши работы</h2>
             <div class="b-portf__wrap"><a class="el-portf" href="#" style="background-image: url('img/portfolio/1.jpg')">
                 <div class="el-portf__body">
                   <div class="el-portf__title">Дом в Барановичах </div>
@@ -262,10 +274,11 @@
                   <div class="el-portf__size">150 кв. м</div>
                 </div></a></div>
           </section>
-          <section class="section express-req b-black" id="experess">
-            <h2 class="express-req__title b-title">Экспресс-заявка</h2>
+          <section class="express-req b-black" id="express">
+            <h2 class="express-req__title container b-title">Экспресс-заявка</h2>
             <div class="express-req__wrap container">
               <div class="express-req__left">
+                <div class="express-req__title-copy b-title">Экспресс-заявка</div>
                 <div class="b-tab b-tab--express-req">
                   <div class="b-tab__nav">
                     <div class="b-tab__nav-item"><a class="b-tab__link" href="#">квартира</a></div>
@@ -337,10 +350,11 @@
             </div>
           </section>
           <section class="b-splited b-splited--contacts b-black" id="contacts">
-            <h2 class="b-splited__title b-title">Контакты</h2>
+            <h2 class="b-splited__title container b-title">Контакты</h2>
             <div class="b-splited__wrap">
               <div class="b-splited__block">
                 <div class="b-splited__content">
+                  <div class="b-splited__title-copy b-title">Контакты</div>
                   <div class="contacts">
                     <address class="contacts__address">Республика Беларусь г. Минск ул. Сурганова 88, оф. 6H</address><a class="contacts__phone" href="tel:+375291067676" target="_blank">+375 (29) 106 76 76</a><a class="contacts__mail" href="mailto:info@knx.by" target="_blank">info@knx.by</a>
                   </div>
@@ -388,8 +402,26 @@
       </main>
     </div>
     <footer class="footer"><a class="footer__guest" href="#">Зайти в гости</a><a class="footer__phone" href="#">+375 (29) 106 76 76</a></footer>
+    <div class="hidden">
+      <form class="contact-us" id="contact-us">
+        <div class="contact-us__body contact-us__form">
+          <div class="contact-us__title">Связаться с нами</div>
+          <input class="contact-us__input c-input" type="text" name="name" placeholder="Ваше имя">
+          <input class="contact-us__input c-input" type="text" name="phone" placeholder="Ваш телефон">
+          <input class="contact-us__input c-input" type="email" name="email" placeholder="E-mail">
+          <button class="c-btn contact-us__send" type="submit">Отправить</button>
+        </div>
+        <div class="contact-us__body contact-us__success-box">
+          <div class="contact-us__title">Письмо отправлено!</div>
+          <div class="contact-us__wrap">
+            <div class="contact-us__success"><img src="img/success.svg" width="64">
+              <div>Спасибо! В ближайшее время мы свяжемся с вами для обсуждения проекта.</div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
     <script src="js/plugins.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.min.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>

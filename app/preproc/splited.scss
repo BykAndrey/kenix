@@ -3,15 +3,35 @@
 	$c: &;
 	position: relative;
 	background: white;
+	&__title {
+		@include below($s768) {
+			display: none;
+		}
+		&-copy {
+			display: none;
+			position: static !important;
+			margin-bottom: 20px;
+			@include below($s768) {
+				display: block;
+			}
+		}
+	}
 	&__wrap {
 		display: flex;
 		width: 100%;
+		@include below($s768) {
+			display: block;
+		}
 	}
 	&__block {
 		min-height: 100vh;
 		flex: 0 0 50%;
 		min-width: 0;
 		max-width: 50%;
+		@include below($s768) {
+			max-width: 100%;
+			min-height: 0;
+		}
 		&:nth-child(1) #{$c}__content {
 			margin: 0 0 0 auto;
 		}
@@ -23,10 +43,20 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		@include below($s768) {
+			max-width: 100%;
+			padding: 20px 20px 15px;
+		}
 	}
 	&__slider {
 		max-width: 50vw;
 		max-height: 100vh;
+		@include below($s768) {
+			max-width: 100%;
+			height: 50vh;
+		}
+		@include below($s768) {
+		}
 		.item {
 			height: 100vh;
 			background: center/cover no-repeat;

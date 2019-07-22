@@ -1,0 +1,14 @@
+.hidden
+	form.contact-us#contact-us
+		.contact-us__body.contact-us__form
+			.contact-us__title Связаться с нами
+			input.contact-us__input.c-input(type="text" name="name" placeholder="Ваше имя")
+			input.contact-us__input.c-input(type="text" name="phone" placeholder="Ваш телефон")
+			input.contact-us__input.c-input(type="email" name="email" placeholder="E-mail")
+			button.c-btn.contact-us__send(type="submit") Отправить
+		.contact-us__body.contact-us__success-box
+			.contact-us__title Письмо отправлено!
+			.contact-us__wrap
+				.contact-us__success
+					img(src="img/success.svg" width="64")
+					div Спасибо! В ближайшее время мы свяжемся с вами для обсуждения проекта.

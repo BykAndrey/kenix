@@ -3,10 +3,28 @@
 .express-req {
 	position: relative;
 	background: white;
+	&__title {
+		@include below($s768) {
+			display: none;
+		}
+		&-copy {
+			display: none;
+			position: static;
+			margin-bottom: 20px;
+			@include below($s768) {
+				display: block;
+			}
+		}
+	}
 	&__wrap {
 		padding-top: 200px;
 		min-height: 100vh;
 		display: flex;
+		@include below($s768) {
+			padding: 20px;
+			min-height: 0;
+			display: block;
+		}
 	}
 	&__left {
 		flex: 0 1 647px;
@@ -15,17 +33,41 @@
 	&__right {
 		flex: 0 1 350px;
 		padding-top: 170px;
+		@include below($s768) {
+			padding-top: 20px;
+			max-width: 350px;
+			width: 100%;
+			margin: auto;
+		}
 	}
 }
 
 .el-express {
 	display: flex;
 	justify-content: flex-start;
+	@include below($s768) {
+		justify-content: center;
+	}
+	@include below($s500) {
+		display: block;
+	}
 	&__image {
 		flex: 0 1 128px;
 		margin-right: 122px;
+		@include below($s853) {
+			margin-right: 40px;
+		}
+		@include below($s500) {
+			margin-right: 0;
+			margin-bottom: 20px;
+		}
 		img {
 			max-width: 100%;
+			margin: auto;
+			display: block;
+			@include below($s500) {
+				max-width: 100px;
+			}
 		}
 	}
 	&__list {
@@ -37,6 +79,9 @@
 		font-weight: 300;
 		line-height: 120%;
 		letter-spacing: 0.05em;
+		@include below($s500) {
+			padding-left: 20px;
+		}
 		li:not(:last-child) {
 			margin-bottom: 19px;
 		}
@@ -65,8 +110,16 @@
 	.b-tab__nav-item:not(:last-child) {
 		margin-right: 10px;
 	}
+	.b-tab__content {
+		max-height: 100%;
+	}
 	.b-tab__body {
 		max-width: 548px;
 		margin-top: 108px;
+		max-height: 100%;
+		@include below($s853) {
+			margin-top: 20px;
+			max-width: 100%;
+		}
 	}
 }

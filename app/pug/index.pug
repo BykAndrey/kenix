@@ -1,12 +1,11 @@
 extend main.pug
 block middle
-	.mes(style="")
-	a.require-call(href="#") Заказать звонок
+	a.require-call.call-us(href="#") Заказать звонок
 	include parts/menu
+	include parts/right-nav
 	.fullpage#fullpage
 		include parts/block_1
 		include parts/b-why
-		
 		include parts/scenarios
 		include parts/smart-house
 		include parts/devices

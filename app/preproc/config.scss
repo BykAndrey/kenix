@@ -29,10 +29,16 @@ $color: #0057ff;
 $attantion: #ffcd00;
 $warning: #ff181f;
 
-$xl: 1200px;
-$lg: 992px;
-$md: 768px;
-$sm: 576px;
+$s1380: 1381px;
+$s1300: 1301px; //1300
+$s1200: 1201px; //1200
+$s1152: 1153px; //1153
+$s1024: 1025px; //1024
+$s960: 961px; //960
+$s853: 854px; //853
+$s768: 769px; //853
+
+$s500: 500px; //853
 
 @mixin below($width) {
 	@media screen and (max-width: $width - 1) {

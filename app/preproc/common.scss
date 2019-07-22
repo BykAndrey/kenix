@@ -13,6 +13,7 @@
 	text-align: center;
 	line-height: 1em;
 	transition-duration: 0.3s;
+	cursor: pointer;
 	&:hover {
 		background: black;
 		color: white;
@@ -54,6 +55,10 @@
 	border-radius: 0;
 	&:focus {
 		outline: none;
+	}
+	&--error {
+		color: #e50000;
+		border-color: #e50000;
 	}
 }
 .text-content {

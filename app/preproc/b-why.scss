@@ -24,11 +24,37 @@
 		display: flex;
 		align-items: flex-end;
 	}
-
+	@include below($s768) {
+		&:nth-child(1) &__body,
+		&:nth-child(2) &__body {
+			padding-top: 150px;
+		}
+	}
+	@include below($s500) {
+		flex: 0 0 100%;
+		min-height: 0;
+		&:nth-child(1) &__body {
+			padding-top: 150px;
+		}
+		&:nth-child(2) &__body {
+			padding-top: 20px;
+		}
+	}
 	&__body {
 		max-width: 625px;
 		padding: 87px 75px 120px;
 		width: 100%;
+		@include below($s1200) {
+			padding-top: 20px;
+			padding-bottom: 50px;
+		}
+		@include below($s1024) {
+			max-width: 400px;
+			padding: 20px;
+		}
+		@include below($s500) {
+			max-width: 100%;
+		}
 	}
 	&__title {
 		font-weight: 700;
@@ -39,5 +65,8 @@
 	}
 	&__content {
 		max-width: 236px;
+		@include below($s1200) {
+			max-width: 2710240px;
+		}
 	}
 }

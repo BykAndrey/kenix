@@ -11,11 +11,23 @@
 		width: 50vw;
 		right: 0;
 		top: 0;
+		@include below($s768) {
+			content: none;
+		}
+	}
+	@include below($s768) {
+		text-align: center;
 	}
 	&__title {
 		font-size: 48px;
 		color: black;
 		max-width: 450px;
+		@include below($s1200) {
+			font-size: 35px;
+		}
+		@include below($s768) {
+			max-width: 100%;
+		}
 	}
 	&__desc {
 		font-size: 16px;
@@ -25,6 +37,12 @@
 		max-width: 400px;
 		margin-top: 83px;
 		margin-bottom: 70px;
+		@include below($s1200) {
+			margin: 50px 0;
+		}
+		@include below($s768) {
+			max-width: 100%;
+		}
 	}
 	&__wrap {
 		display: flex;
@@ -35,5 +53,35 @@
 	}
 	&__block {
 		max-width: 50%;
+		padding-right: 15px;
+		@include below($s768) {
+			max-width: 100%;
+			padding-right: 0;
+		}
+	}
+	&__scroll-down {
+		color: black;
+		position: absolute;
+		font-family: $font2;
+		font-size: 14px;
+		font-weight: 300;
+		text-align: center;
+		bottom: 47px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 1;
+		&:after {
+			content: "";
+			position: absolute;
+			display: block;
+			width: 11.3px;
+			height: 11.3px;
+			border-bottom: 1px solid black;
+			border-right: 1px solid black;
+			transform: rotate(45deg);
+			right: 0;
+			left: 0;
+			margin: 0 auto;
+		}
 	}
 }

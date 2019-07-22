@@ -11,23 +11,50 @@
 	font-size: 16px;
 	line-height: 160%;
 	color: black;
+	@media (max-width: 1100px) {
+		flex: 0 0 50%;
+		padding-right: 15px;
+	}
+	@media (max-width: 600px) {
+		flex: 0 0 100%;
+	}
+
 	&:nth-child(1),
 	&:nth-child(2) {
 		margin-bottom: 70px;
+		@media (max-height: 820px) {
+			margin-bottom: 25px;
+		}
 	}
 	&__img {
 		margin-bottom: 28px;
+		@media (max-height: 820px) {
+			margin-bottom: 15px;
+		}
 		img {
 			max-width: 90px;
 			max-height: 72px;
+			@media (max-height: 820px) {
+				max-height: 50px;
+			}
 		}
 	}
 	&__title {
 		font-weight: 700;
 		line-height: 1em;
 		margin-bottom: 25px;
+		@media (max-height: 820px) {
+			margin-bottom: 15px;
+		}
 	}
 	&__desc {
 		max-width: 240px;
+
+		@media (max-height: 820px) {
+			line-height: 1.1em;
+		}
+		@media (max-width: 600px) {
+			max-width: 100%;
+		}
 	}
 }

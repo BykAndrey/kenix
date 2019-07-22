@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.css" media="all" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="css/plugins.css" media="all" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="css/style.css" media="all" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="css/style-media.css" media="all" onload="if(media!='all')media='all'">
@@ -24,8 +23,26 @@
       </main>
     </div>
     <footer class="footer"><a class="footer__guest" href="#">Зайти в гости</a><a class="footer__phone" href="#">+375 (29) 106 76 76</a></footer>
+    <div class="hidden">
+      <form class="contact-us" id="contact-us">
+        <div class="contact-us__body contact-us__form">
+          <div class="contact-us__title">Связаться с нами</div>
+          <input class="contact-us__input c-input" type="text" name="name" placeholder="Ваше имя">
+          <input class="contact-us__input c-input" type="text" name="phone" placeholder="Ваш телефон">
+          <input class="contact-us__input c-input" type="email" name="email" placeholder="E-mail">
+          <button class="c-btn contact-us__send" type="submit">Отправить</button>
+        </div>
+        <div class="contact-us__body contact-us__success-box">
+          <div class="contact-us__title">Письмо отправлено!</div>
+          <div class="contact-us__wrap">
+            <div class="contact-us__success"><img src="img/success.svg" width="64">
+              <div>Спасибо! В ближайшее время мы свяжемся с вами для обсуждения проекта.</div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
     <script src="js/plugins.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.min.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>
