@@ -59,6 +59,9 @@
 	&__title {
 		font-weight: 700;
 		margin-bottom: 28px;
+		@include below($s500) {
+			margin-bottom: 10px;
+		}
 	}
 	&__desc {
 		font-weight: 300;

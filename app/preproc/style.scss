@@ -94,7 +94,7 @@ section {
 .footer {
 	@include below($s768) {
 		background: white;
-		padding: 15px 20px 20px;
+		padding: 10px 20px 20px;
 		position: fixed;
 		z-index: 10;
 		bottom: 0;
@@ -111,8 +111,9 @@ section {
 		left: 44px;
 		bottom: 50px;
 		z-index: 100;
-		.style-black & {
+		&.style-black {
 			color: white;
+
 			&:after {
 				background: white;
 			}
@@ -321,10 +322,10 @@ section {
 		@include below($s960) {
 			font-size: 14px;
 		}
-		@media (min-width: 768px) and (max-width: 960px) {
+		/*@media (min-width: 768px) and (max-width: 960px) {
 			max-height: 50vh;
 			overflow: auto;
-		}
+		}*/
 		&.is-active {
 			display: block;
 		}
@@ -339,6 +340,11 @@ section {
 
 .b-tab__nav--smart {
 	justify-content: space-between;
+	@media screen and (min-width: 800px) {
+		.b-tab__nav-item:nth-child(3) {
+			margin-right: 50px;
+		}
+	}
 }
 .bottom-button-wrap {
 	position: absolute;
@@ -380,7 +386,7 @@ section {
 	width: 100%;
 	@include below($s768) {
 		height: 500px;
-		max-height: 70vh;
+		max-height: 50vh;
 	}
 }
 
@@ -504,9 +510,14 @@ body.scroll {
 	margin: auto;
 	max-width: 700px;
 	width: 100%;
-	padding: 106px 0;
+	padding: 106px 20px;
 	position: relative;
 	min-height: 550px;
+	@include below($s768) {
+		padding: 30px 20px;
+		min-height: 0;
+		max-width: 450px;
+	}
 	&__body {
 		min-height: 337px;
 		max-width: 355px;
@@ -521,6 +532,9 @@ body.scroll {
 		letter-spacing: 0.05em;
 		color: black;
 		margin-bottom: 54px;
+		@include below($s768) {
+			font-size: 35px;
+		}
 	}
 	&__input {
 		width: 100%;
@@ -557,7 +571,10 @@ body.scroll {
 		right: 40px;
 		width: 23px;
 		height: 23px;
-
+		@include below($s768) {
+			top: 15px;
+			right: 15px;
+		}
 		&:after,
 		&:before {
 			content: "";

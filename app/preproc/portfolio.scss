@@ -24,6 +24,7 @@
 	}
 	@include below($s500) {
 		flex: 0 0 100%;
+		max-height: 250px;
 	}
 	&:hover:after {
 		background: rgba(0, 0, 0, 0.4);
@@ -50,6 +51,7 @@
 		z-index: 1;
 		@include below($s768) {
 			padding: 15px;
+			font-size: 16px;
 		}
 	}
 	&__title {

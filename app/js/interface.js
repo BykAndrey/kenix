@@ -1,8 +1,5 @@
-$(document).ready(() => {
-	function AddEventText(mes) {
-		// $(".mes").append("<div>" + mes + "</div>");
-	}
-	(function() {
+$(document).ready(function() {
+	/*	(function() {
 		let RunFlag = false;
 		let sections = $("section");
 		let countSlide = sections.length;
@@ -153,11 +150,11 @@ $(document).ready(() => {
 			var yDiff = yDown - yUp;
 
 			if (Math.abs(xDiff) > Math.abs(yDiff)) {
-				/*most significant*/
+			
 				if (xDiff > 0) {
-					/* left swipe */
+			
 				} else {
-					/* right swipe */
+				
 				}
 			} else {
 				if (yDiff > 0) {
@@ -170,7 +167,7 @@ $(document).ready(() => {
 					}
 				}
 			}
-			/* reset values */
+
 
 			xDown = null;
 			yDown = null;
@@ -248,59 +245,123 @@ $(document).ready(() => {
 			$("#fullpage")[0].removeEventListener("wheel", fullPageWheel);
 			RunFlag = false;
 		}
-		/*START();
-		window.addEventListener("resize", START);*/
-	})();
+		START();
+		window.addEventListener("resize", START);
+	})();*/
 
 	/** */
+	console.log("ready");
 	(function() {
 		let sections = $("section");
+		let rnav = $(".rnav .rnav__link");
+		let menu = $(".s-menu__link");
 		let elColorChange = [
 			".side-menu__toggle",
 			".require-call",
 			".footer__phone",
-			".footer__guest"
+			".footer__guest",
+			".rnav"
 		];
+		function SetActiveMenuItem(href) {
+			rnav.each(function(id, el) {
+				$(el).removeClass("is-active");
+				if ($(el).attr("href") === href) {
+					$(el).addClass("is-active");
+				}
+			});
+			menu.each(function(id, el) {
+				$(el).removeClass("is-active");
+				if ($(el).attr("href") === href) {
+					$(el).addClass("is-active");
+				}
+			});
+		}
+		function MenuHandler(e) {
+			let href = $(this).attr("href");
+			$("body, html").animate(
+				{
+					scrollTop: $(href).offset().top
+				},
+				500
+			);
+			SetActiveMenuItem(href);
+		}
+		rnav.on("click", MenuHandler);
+		menu.on("click", MenuHandler);
+
 		function windowScroll() {
 			$("main").removeClass("style-black");
 			$("main").removeClass("style-white");
 
-			elColorChange.forEach(el => {
+			elColorChange.forEach(function(el) {
 				$(el).removeClass("style-black");
 				$(el).removeClass("style-white");
 			});
 			let sct = $("body, html").scrollTop();
-			sections.each((id, sec) => {
-				elColorChange.forEach(el => {
-					let scroll = document.getElementsByTagName("html")[0]
-						.scrollTop;
-					console.log($(sec).offset().top <= scroll + 20);
-					if (
-						$(sec).offset().top <= 50 + sct &&
-						$(sec).offset().top + $(sec).innerHeight() >= 50 + sct
-					) {
-						switch ($(sec).attr("data-style")) {
-							case "black":
-								$(el).addClass("style-black");
 
-								break;
-							case "white":
-								$(el).addClass("style-white");
-
-								break;
-						}
-					}
-				});
+			sections.each(function(id, sec) {
+				if (
+					$(sec).offset().top <= sct &&
+					$(sec).offset().top + $(sec).innerHeight() >= sct
+				) {
+					SetActiveMenuItem("#" + $(sec).attr("id"));
+				}
 			});
+			if (window.innerWidth > 768) {
+				sections.each(function(id, sec) {
+					elColorChange.forEach(function(el) {
+						let rect = $(el)[0].getBoundingClientRect();
+						if (
+							$(sec).offset().top <= rect.y + sct &&
+							$(sec).offset().top + $(sec).innerHeight() >=
+								rect.y + sct
+						) {
+							if (el == ".require-call") {
+								if ("#" + $(sec).attr("id") === "#contacts") {
+									$(".require-call").css({ display: "none" });
+								} else {
+									$(".require-call").css("display", "block");
+								}
+							}
+							if (el == ".footer__phone") {
+								if ("#" + $(sec).attr("id") === "#contacts") {
+									$(".footer__phone").css({
+										display: "none"
+									});
+								} else {
+									$(".footer__phone").css({
+										display: "block"
+									});
+								}
+							}
+							switch ($(sec).attr("data-style")) {
+								case "black":
+									$(el).addClass("style-black");
+									break;
+								case "white":
+									$(el).addClass("style-white");
+									break;
+							}
+						}
+					});
+				});
+			} else {
+				elColorChange.forEach(function(el) {
+					$(el).removeClass("style-black");
+					$(el).removeClass("style-white");
+				});
+				$(".require-call").css("display", "block");
+				$(".footer__phone").css("display", "block");
+			}
 		}
 		window.addEventListener("scroll", windowScroll);
 	})();
-	/** */
 
+	/** */
 	$(".side-menu")[0].addEventListener("wheel", function(e) {
 		e.stopPropagation();
 	});
-	$(".b-tab__content").each((id, el) => {
+	$(".b-tab__content").each(function(id, el) {
 		el.addEventListener("wheel", function(e) {
 			e.stopPropagation();
 		});
@@ -319,10 +380,10 @@ $(document).ready(() => {
 			menu.removeClass("is-active");
 			bg.removeClass("is-active");
 		}
-		bg.on("click", () => {
+		bg.on("click", function() {
 			Close();
 		});
-		toggle.on("click", () => {
+		toggle.on("click", function() {
 			if (toggle.hasClass("is-active")) {
 				Close();
 			} else {
@@ -335,7 +396,9 @@ $(document).ready(() => {
 	$(".js-slider").slick({
 		slidesToShow: 1,
 		dost: false,
-		arrows: false
+		arrows: false,
+		autoplay: true,
+		autoplaySpeed: 2000
 	});
 
 	/*tabs*/
@@ -394,13 +457,15 @@ $(document).ready(() => {
 		slider = slider.slick({
 			slidesToShow: 1,
 			dost: false,
-			arrows: false
+			arrows: false,
+			autoplay: true,
+			autoplaySpeed: 10000
 		});
 		function changeEvent(id) {
 			slider.slick("slickGoTo", id);
 		}
 	}
-	$(".tabs-slider").each((id, el) => {
+	$(".tabs-slider").each(function(id, el) {
 		SplitedBlock(el);
 	});
 
@@ -408,7 +473,7 @@ $(document).ready(() => {
 	let prevArrow = `<div class="arrow arrow--prev"><img src="img/arrow-left-white.svg"/></div>`;
 	let nextArrow = `<div class="arrow arrow--next"><img src="img/arrow-right-white.svg"/></div>`;
 
-	$(".b-devices__block").each((id, el) => {
+	$(".b-devices__block").each(function(id, el) {
 		$(el)
 			.find(".b-devices__slider")
 			.slick({
@@ -487,5 +552,14 @@ $(document).ready(() => {
 		/**Send form */
 		$(".contact-us__success-box").css("display", "flex");
 		$(".contact-us__form").css("display", "none");
+	});
+
+	$(".bottom-button-wrap .c-btn, .contacts-call").on("click", function() {
+		$("body, html").animate(
+			{
+				scrollTop: $($(this).attr("href")).offset().top
+			},
+			1000
+		);
 	});
 });
