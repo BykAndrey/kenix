@@ -30,7 +30,7 @@
     "concat": "^1.0.3",
     "cssnano": "^4.1.10",
     "cssnext": "^1.8.4",
-    "fullpage.js": "^3.0.7",
+    "fullpage.js": "^4.0.5",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^8.0.0",
