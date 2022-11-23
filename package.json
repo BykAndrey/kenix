@@ -10,7 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^9.4.3",
-    "browser-sync": "^2.24.5",
+    "browser-sync": "^2.27.10",
     "browsersync": "0.0.1-security",
     "compress-images": "^1.5.2",
     "gulp": "^3.9.1",
